@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "companyId": 1,
+        "interviewFlowId": 1,
+        "title": "Frontend Developer",
+        "description": "Desarrollador Frontend para proyecto innovador",
+        "status": "Open",
+        "isVisible": true,
+        "location": "Remote",
+        "jobDescription": "Desarrollo de interfaces de usuario",
+        "requirements": "2+ años de experiencia con React",
+        "responsibilities": "Crear interfaces de usuario responsivas y accesibles",
+        "salaryMin": 45000,
+        "salaryMax": 65000,
+        "employmentType": "Full-time",
+        "benefits": "Seguro médico, Gimnasio, Horario flexible",
+        "companyDescription": "Empresa líder en desarrollo de software",
+        "applicationDeadline": "2024-12-31T00:00:00.000Z",
+        "contactInfo": "rrhh@empresa.com"
+    },
+    {
+        "id": 2,
+        "companyId": 1,
+        "interviewFlowId": 1,
+        "title": "Backend Developer",
+        "description": "Desarrollador Backend Node.js",
+        "status": "Open",
+        "isVisible": true,
+        "location": "Hybrid",
+        "jobDescription": "Desarrollo de APIs y servicios",
+        "requirements": "Experiencia en Node.js y bases de datos",
+        "responsibilities": "Diseñar y mantener APIs REST",
+        "salaryMin": 50000,
+        "salaryMax": 70000,
+        "employmentType": "Full-time",
+        "benefits": "Seguro médico, Trabajo remoto",
+        "companyDescription": "Empresa líder en desarrollo de software",
+        "applicationDeadline": "2024-12-31T00:00:00.000Z",
+        "contactInfo": "rrhh@empresa.com"
+    }
+] 
