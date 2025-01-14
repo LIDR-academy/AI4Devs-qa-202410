@@ -1,0 +1,24 @@
+[
+    {
+        "fullName": "Ana Martínez",
+        "currentInterviewStep": "Initial Screening",
+        "candidateId": 2,
+        "applicationId": 3,
+        "averageScore": 4
+    },
+    {
+        "fullName": "Roberto Silva",
+        "currentInterviewStep": "Technical Interview",
+        "candidateId": 3,
+        "applicationId": 4,
+        "averageScore": 0
+    },
+    {
+        "fullName": "María González",
+        "currentInterviewStep": "Manager Interview",
+        "candidateId": 1,
+        "applicationId": 1,
+        "averageScore": 5
+    }
+] 
+
