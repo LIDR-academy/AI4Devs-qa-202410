@@ -110,11 +110,19 @@ const PositionsDetails = () => {
             <Button variant="link" onClick={() => navigate('/positions')} className="mb-3">
                 Volver a Posiciones
             </Button>
-            <h2 className="text-center mb-4">{positionName}</h2>
+            <h2 className="text-center mb-4" data-testid="position-detail-title">
+                {positionName}
+            </h2>
             <DragDropContext onDragEnd={onDragEnd}>
                 <Row>
                     {stages.map((stage, index) => (
-                        <StageColumn key={index} stage={stage} index={index} onCardClick={handleCardClick} />
+                        <StageColumn 
+                            key={index} 
+                            stage={stage} 
+                            index={index} 
+                            onCardClick={handleCardClick}
+                            data-testid="interview-step"
+                        />
                     ))}
                 </Row>
             </DragDropContext>

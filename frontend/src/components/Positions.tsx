@@ -79,7 +79,7 @@ const Positions: React.FC = () => {
                     <Col md={4} key={index} className="mb-4">
                         <Card className="shadow-sm">
                             <Card.Body>
-                                <Card.Title>{position.title}</Card.Title>
+                                <Card.Title data-testid="position-title">{position.title}</Card.Title>
                                 <Card.Text>
                                     <strong>Manager:</strong> {position.contactInfo}<br />
                                     <strong>Deadline:</strong> {position.applicationDeadline}
