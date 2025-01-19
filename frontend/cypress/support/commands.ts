@@ -35,3 +35,77 @@
 //     }
 //   }
 // }
+
+export {}; // This ensures the file is treated as a module
+
+declare global {
+  namespace Cypress {
+    interface Chainable {
+      dragAndDrop(sourceSelector: string, targetSelector: string): Chainable<Element>;
+    }
+  }
+}
+
+Cypress.Commands.add('dragAndDrop', (sourceSelector, targetSelector) => {
+  cy.get(sourceSelector).should('exist').then((source) => {
+    const sourceRect = source[0].getBoundingClientRect();
+
+    cy.get(targetSelector).should('exist').then((target) => {
+      const targetRect = target[0].getBoundingClientRect();
+
+      const dataTransfer = new DataTransfer();
+
+      // Calculate the center coordinates of the source and target elements
+      const sourceCenterX = sourceRect.left + sourceRect.width / 2;
+      const sourceCenterY = sourceRect.top + sourceRect.height / 2;
+      const targetCenterX = targetRect.left + targetRect.width / 2;
+      const targetCenterY = targetRect.top + targetRect.height / 2;
+
+      // Start the drag operation
+      cy.get(sourceSelector)
+        .trigger('mousedown', {
+          button: 0,
+          clientX: sourceCenterX,
+          clientY: sourceCenterY,
+          dataTransfer,
+          force: true,
+        })
+        .wait(200) // Short wait to ensure the mousedown is registered
+        .trigger('mousemove', {
+          button: 0,
+          clientX: sourceCenterX + 20, // More pronounced move to initiate drag
+          clientY: sourceCenterY + 20,
+          dataTransfer,
+          force: true,
+        })
+        .wait(200) // Short wait to simulate dragging
+        .trigger('mousemove', {
+          button: 0,
+          clientX: targetCenterX - 20, // Move closer to the target
+          clientY: targetCenterY - 20,
+          dataTransfer,
+          force: true,
+        })
+        .wait(200) // Short wait to simulate dragging
+        .trigger('mousemove', {
+          button: 0,
+          clientX: targetCenterX,
+          clientY: targetCenterY,
+          dataTransfer,
+          force: true,
+        })
+        .trigger('mouseup', { force: true });
+
+      // Ensure the target receives the drop
+      cy.get(targetSelector)
+        .trigger('mousemove', {
+          button: 0,
+          clientX: targetCenterX,
+          clientY: targetCenterY,
+          dataTransfer,
+          force: true,
+        })
+        .trigger('mouseup', { force: true });
+    });
+  });
+});
