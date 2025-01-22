@@ -228,6 +228,7 @@ const AddCandidateForm = () => {
                                                 value={experience.company}
                                                 onChange={(e) => handleInputChange(e, index, 'workExperiences')}
                                                 className="form-control shadow-sm"
+                                                data-test="input-company"
                                             />
                                         </Col>
                                     </Row>
@@ -269,7 +270,7 @@ const AddCandidateForm = () => {
                             ))}
                         </Col>
                     </Row>
-                    <Button type="submit" className="btn btn-primary btn-block shadow-sm mt-5">Enviar</Button>
+                    <Button type="submit" className="btn btn-primary btn-block shadow-sm mt-5" data-test="submit-button">Enviar</Button>
                     {error && <Alert variant="danger" className="mt-3">{error}</Alert>}
                     {successMessage && <Alert variant="success" className="mt-3">{successMessage}</Alert>}
                 </Form>
